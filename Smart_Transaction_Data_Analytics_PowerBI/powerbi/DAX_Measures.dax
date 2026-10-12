@@ -1,0 +1,46 @@
+-- Create these measures with Modeling > New measure.
+-- The model table/query should be named Transactions_Raw.
+
+Total Transactions = DISTINCTCOUNT(Transactions_Raw[Transaction_ID])
+
+Total Amount = SUM(Transactions_Raw[Amount_INR])
+
+Successful Transactions =
+CALCULATE(
+    [Total Transactions],
+    Transactions_Raw[Transaction_Status] = "Success"
+)
+
+Failed Transactions =
+CALCULATE(
+    [Total Transactions],
+    Transactions_Raw[Transaction_Status] = "Failed"
+)
+
+Pending Transactions =
+CALCULATE(
+    [Total Transactions],
+    Transactions_Raw[Transaction_Status] = "Pending"
+)
+
+Success Rate % = DIVIDE([Successful Transactions], [Total Transactions], 0)
+
+Failure Rate % = DIVIDE([Failed Transactions], [Total Transactions], 0)
+
+Average Transaction Amount = AVERAGE(Transactions_Raw[Amount_INR])
+
+Maximum Transaction Amount = MAX(Transactions_Raw[Amount_INR])
+
+Anomalous Transactions =
+CALCULATE(
+    [Total Transactions],
+    Transactions_Raw[Amount_INR] > 25000
+)
+
+Anomaly Rate % = DIVIDE([Anomalous Transactions], [Total Transactions], 0)
+
+-- Optional calculated column: Modeling > New column
+Anomaly Flag = IF(Transactions_Raw[Amount_INR] > 25000, "Anomaly", "Normal")
+
+-- Optional calculated column for hour-of-day analysis.
+Transaction Hour = HOUR(Transactions_Raw[Transaction_Time])

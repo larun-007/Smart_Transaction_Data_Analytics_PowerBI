@@ -1,0 +1,29 @@
+SMART DIGITAL PAYMENT TRANSACTION ANALYTICS AND MONITORING DASHBOARD
+FINAL PROJECT OUTPUT
+
+Dataset:
+Synthetic academic digital-payment dataset, Jan-Sep 2026.
+After cleaning duplicate Transaction_ID values, the final analytical dataset contains 1,500 unique transactions.
+
+KEY RESULTS
+- Total transactions: 1,500
+- Total transaction value: ₹2,595,300.17
+- Successful transactions: 1,226
+- Failed transactions: 161
+- Pending transactions: 113
+- Success rate: 81.73%
+- Average transaction amount: ₹1,730.20
+- Maximum transaction amount: ₹70,380.82
+- High-value anomalies (> ₹25,000): 18
+- Anomaly rate: 1.20%
+
+FINAL DASHBOARD PAGES
+1. Executive Dashboard — KPI cards, monthly trend, payment-method distribution and status monitoring.
+2. Payment Performance — payment method, category, location and transaction-status analysis.
+3. Anomaly Monitoring — high-value transaction KPI and anomaly detail table.
+
+RESULTS AND DISCUSSION
+The completed dashboard processes the transaction dataset and presents the major payment indicators in a centralized visual form. The final cleaned dataset contains 1,500 unique transactions. The total transaction value is ₹2,595,300.17, with a success rate of 81.73%. Successful, failed and pending transactions can be monitored through KPI cards and status visuals. Payment-method and category views provide comparative insight into transaction activity and value. The anomaly-monitoring page identifies 18 high-value transactions above the defined ₹25,000 threshold. Interactive filtering allows users to investigate transactions by date, method, status, category and location. The dashboard therefore reduces manual analysis and provides a clear basis for faster data-driven monitoring.
+
+CONCLUSION
+The completed Power BI-style solution implements the project flow described in the PPT: transaction data acquisition, cleaning and transformation, payment-performance analytics, anomaly monitoring, and interactive visualization/reporting. It provides a centralized view of digital payment activity and supports quick identification of successful, failed, pending and unusually high-value transactions. The output is suitable for academic demonstration and can be recreated as a native Power BI .pbix report using the supplied dataset and DAX measures.
